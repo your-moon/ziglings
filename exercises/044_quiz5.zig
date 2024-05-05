@@ -21,10 +21,13 @@ pub fn main() void {
     // (Please add Elephant B here!)
     var elephantC = Elephant{ .letter = 'C' };
 
+    var elephantB = Elephant{ .letter = 'B' };
+
     // Link the elephants so that each tail "points" to the next elephant.
     // They make a circle: A->B->C->A...
     elephantA.tail = &elephantB;
     // (Please link Elephant B's tail to Elephant C here!)
+    elephantB.tail = &elephantC;
     elephantC.tail = &elephantA;
 
     visitElephants(&elephantA);
